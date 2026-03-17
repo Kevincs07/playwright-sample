@@ -1,0 +1,15 @@
+{
+  "name": "amazon-playwright-project",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "lint": "eslint . --ext .ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "eslint": "^8.46.0",
+    "typescript": "^5.5.6"
+  }
+}
