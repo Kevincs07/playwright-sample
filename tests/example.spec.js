@@ -24,12 +24,12 @@ test('amazon search and checkout flow', async ({ page }) => {
 
   TestUtils.logStep(4, `Select product: "${testConfig.searchTerms.product}"`);
   const [newPage] = await Promise.all([
-    page.waitForEvent('popup'), // Capture new tab from product selection
+    page.waitForEvent('popup'),
     searchResults.selectProductByName(testConfig.searchTerms.product)
   ]);
   await newPage.waitForLoadState('domcontentloaded');
-  page = newPage; // Switch to the new product page
-  const productPage = new AmazonProductPage(page); // Create with new page
+  page = newPage;
+  const productPage = new AmazonProductPage(page);
 
   TestUtils.logStep(5, 'Click Buy Now button');
   await productPage.clickBuyNow();
